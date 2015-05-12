@@ -1,0 +1,22 @@
+<div class="container">
+  <h2>Produtos</h2>
+  <%= link_to "Voltar", :back, class:'btn btn-default pull-right' %>
+  <table class="col-md-12 table ">
+    <tr>
+      <th>Nome</th>
+      <th>Cód</th>
+      <th>Preço</th>
+      <th></th>
+    </tr>
+    
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= link_to product.name, product_path(product) %></td>
+        <td><%= product.code %></td>
+        <td><%= product.price %></td>
+        <td><%= link_to "Editar", edit_product_path(product) %></td>
+      </tr>
+    <% end %>
+
+  </table>
+</div>  
