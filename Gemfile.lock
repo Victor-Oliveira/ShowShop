@@ -75,6 +75,7 @@ GEM
     json (1.8.2)
     loofah (2.0.2)
       nokogiri (>= 1.5.9)
+    magic_encoding (0.0.2)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
     mime-types (2.5)
@@ -169,6 +170,7 @@ DEPENDENCIES
   devise (~> 3.4.0)
   jbuilder (~> 2.0)
   jquery-rails
+  magic_encoding
   rails (= 4.2.1)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
