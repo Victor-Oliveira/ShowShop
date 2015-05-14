@@ -1,9 +1,9 @@
 <%= simple_form_for @store, :html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.input :name %>
-  <%= f.input :cnpj %>
-  <%= f.input :description %>
-  <%= f.input :banner %>
-  <%= f.input :location %>
+  <%= f.input :name %><br />
+  <%= f.input :cnpj %><br />
+  <%= f.input :description %><br />
+  <%= f.input :banner %><br />
+  <%= f.input :location %><br />
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),

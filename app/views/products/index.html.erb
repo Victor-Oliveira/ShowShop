@@ -1,22 +1,34 @@
 <div class="container">
-  <h2>Produtos</h2>
-  <%= link_to "Voltar", :back, class:'btn btn-default pull-right' %>
-  <table class="col-md-12 table ">
-    <tr>
-      <th>Nome</th>
-      <th>Cód</th>
-      <th>Preço</th>
-      <th></th>
-    </tr>
-    
-    <% @products.each do |product| %>
+  <%- model_class = Product -%>
+  <div class="page-header">
+    <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+  </div>
+  <table class="table table-striped">
+    <thead>
       <tr>
-        <td><%= link_to product.name, product_path(product) %></td>
-        <td><%= product.code %></td>
-        <td><%= product.price %></td>
-        <td><%= link_to "Editar", edit_product_path(product) %></td>
+        <th><%= model_class.human_attribute_name(:id) %></th>
+        <th><%= model_class.human_attribute_name(:name) %></th>
+        <th><%= model_class.human_attribute_name(:code) %></th>
+        <th><%= model_class.human_attribute_name(:price) %></th>
+        <th><%=t '.actions', :default => t("helpers.actions") %></th>
       </tr>
-    <% end %>
-
+    </thead>
+    <tbody>
+      <% @products.each do |product| %>
+        <tr>
+          <td><%= link_to product.id, product_path(product) %></td>
+          <td><%= product.name %></td>
+          <td><%= product.code %></td>
+          <td><%= product.price %></td>
+          <td><%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_product_path(product), :class => 'btn btn-mini' %>
+              <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      product_path(product),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %></td>
+        </tr>
+      <% end %>
+    </tbody>
   </table>
 </div>  
