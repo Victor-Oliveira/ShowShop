@@ -7,3 +7,15 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.create(email:"admin@example.com", password:"rootadmin")
+
+Store.create(name:"Loja 01", cnpj:"1111111111", description:"descrição", banner:"banner", location: "Endereço")
+Store.create(name:"Loja 02", cnpj:"2222222222", description:"descrição", banner:"banner", location: "Endereço")
+Store.create(name:"Loja 03", cnpj:"3333333333", description:"descrição", banner:"banner", location: "Endereço")
+Store.create(name:"Loja 04", cnpj:"4444444444", description:"descrição", banner:"banner", location: "Endereço")
+Store.create(name:"Loja 05", cnpj:"5555555555", description:"descrição", banner:"banner", location: "Endereço")
+
+Product.create(name:"Produto 01", code:"0101", description:"descrição", price: BigDecimal.new(100))
+Product.create(name:"Produto 02", code:"0202", description:"descrição", price: BigDecimal.new(90))
+Product.create(name:"Produto 03", code:"0303", description:"descrição", price: BigDecimal.new(150))
+Product.create(name:"Produto 04", code:"0404", description:"descrição", price: BigDecimal.new(200))
+Product.create(name:"Produto 05", code:"0505", description:"descrição", price: BigDecimal.new(70))
