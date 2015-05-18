@@ -30,8 +30,12 @@ $ligther_blue: #00C1C1;
 
 .navbar-brand{
   font-family: Roboto;
-  font-size:   1.8em;
+  font-size:   2em;
   font-weight: bolder;
+  color: $ligther_blue !important;
+  &:hover{
+    color: $main_blue !important;
+  }
 }
 
 body {
@@ -53,6 +57,16 @@ body {
     box-shadow: 0 0 3px #00A6A6;
   }
 }
+.btn-search{
+  font-weight: bolder;
+  color: #fafafa;
+  background: $main_blue;
+  border: 1px solid $main_blue;
+}
+.showshop-display{
+  background:#f8f8f8;
+  padding:20px 10px;
+}
 
 .intro-header{
   margin-top: 50px;
@@ -67,7 +81,7 @@ body {
   font-size: 6em;
   text-transform: none;
   font-weight: bolder;
-  color:$ligther_blue;
+  color: #f4f4f4;
   text-shadow:1px 1px 2px $main_blue;
 }
 
