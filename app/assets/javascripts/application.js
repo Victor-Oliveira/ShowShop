@@ -15,3 +15,13 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
+
+var ready = function(){
+  
+  var banner = $('.banner-img').attr("src")
+  $('.banner').css("background","url("+banner+")")
+  $('.banner').css("background-size","cover")
+  
+}
+
+$(document).ready(ready);
