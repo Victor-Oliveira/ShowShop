@@ -18,10 +18,12 @@
 
 var ready = function(){
   
-  var banner = $('.banner-img').attr("src")
-  $('.banner').css("background","url("+banner+")")
+  var img = $('.banner-img').attr("src")
+  $('.banner').css("background","url("+img+")")
   $('.banner').css("background-size","cover")
   
+  img = $('.card-product-img').parent().css("background","url("+$(this).children().attr("src")+")").css("background-size","cover")
+ 
 }
 
 $(document).ready(ready);

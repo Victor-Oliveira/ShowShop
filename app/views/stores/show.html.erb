@@ -2,22 +2,29 @@
   <%= image_tag @store.banner, class: 'banner-img' %>
 </div>
 
-<div style="background:orange;" class="page container">
-  <div class="col-md-5 page-header">
-    <%= @store.name %>
-  </div>
-  <div class="col-md-7">
-    barra de busca
-  </div>
-
-  <nav class="row">
-    <ul class="nav page-nav col-md-12">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="#">Features</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </nav>
+<section class="page container">
   
-  
+  <header class="col-md-12 page-header store-header">
+    <div class="col-md-5">
+      <%= @store.name %>
+    </div>
+    <div class="col-md-7" style="height:100%;">
+      <div class=" page-search input-group col-md-10 col-md-offset-2">
+      <input type="text" class="form-control" placeholder="Search for...">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button"><%= icon('search') %></button>
+      </span>
+    </div>
+    </div>
+    </div>
+  </header>
 
-</div>
+  <%= render "stores/page_navbar" %>
+  
+  <div class="col-md-12">
+    <h2 class="col-md-12">PROMOÇÕES</h2>
+    <%= render @products.last(4) %>
+  </div>
+    
+
+</section>
