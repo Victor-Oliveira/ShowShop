@@ -13,3 +13,24 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import url(http://fonts.googleapis.com/css?family=Dosis:400,700|Roboto:400,500,700|Fjalla+One);
+
+.btn {
+  border-radius: 0;
+  padding:6px 40px;
+}
+h1{
+  text-transform: uppercase;
+  font-family:Dosis;
+  color:#00A6A6;
+}
+
+body {
+  font-family: Roboto;
+}
+
+.form-control{
+}
+
