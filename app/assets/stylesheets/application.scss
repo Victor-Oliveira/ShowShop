@@ -22,7 +22,7 @@ $ligther_blue: #00C1C1;
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import url(http://fonts.googleapis.com/css?family=Dosis:400,700|Roboto:400,500,700|Fjalla+One);
-
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700,600,800,300);
 .btn {
   border-radius: 0;
   padding:6px 40px;
@@ -52,6 +52,23 @@ body {
     border: 1px solid #00A6A6;
     box-shadow: 0 0 3px #00A6A6;
   }
+}
+
+.intro-header{
+  margin-top: 50px;
+  height: 30em;
+}
+.site-heading{
+  margin-top: 8em;
+  vertical-align: middle;
+}
+.brand{
+  font-family: Open Sans;
+  font-size: 6em;
+  text-transform: none;
+  font-weight: bolder;
+  color:$ligther_blue;
+  text-shadow:1px 1px 2px $main_blue;
 }
 
 .page{
@@ -116,7 +133,7 @@ body {
 
 h1,h2,h3,h4,h5,h6,
 .h1,.h2,.h3,.h4,.h5,.h6{
-  font-family:Dosis !important;
+  font-family:Dosis;
   text-transform: uppercase;
   color:#00A6A6;
 }
