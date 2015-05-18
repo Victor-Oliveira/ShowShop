@@ -1,12 +1,37 @@
+<div class="col-md-8 col-md-offset-2">
+
 <%= simple_form_for @store, :html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.input :name %><br />
-  <%= f.input :cnpj %><br />
-  <%= f.input :description %><br />
-  <%= f.input :banner %><br />
-  <%= f.input :location %><br />
-  <div class="form-actions">
-    <%= f.button :submit, :class => 'btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                stores_path, :class => 'btn' %>
+
+  <div class="form-group col-md-12">
+    <label class="col-md-2 control-label">Nome </label>
+    <div class="col-md-10">
+      <%= f.input :name, label:false, wrapper:false %><br />
+    </div>
+    
+    <label class="col-md-2 control-label">CNPJ </label>
+    <div class="col-md-10">
+      <%= f.input :cnpj, label:false, wrapper:false %><br />
+    </div>
+
+    <label class="col-md-2 control-label">Descrição </label>
+    <div class="col-md-10">
+    <%= f.input :description, label:false, wrapper:false %><br />
+    </div>
+
+    <label class="col-md-2 control-label">Banner </label>
+    <div class="col-md-10">
+      <%= f.input :banner, label:false, wrapper:false %><br />
+    </div>
+
+    <label class="col-md-2 control-label">Localização </label>
+    <div class="col-md-10">
+      <%= f.input :location, label:false, wrapper:false %><br />
+    </div>
+  <div class="form-actions col-md-10 col-md-offset-2">
+    <%= link_to "Voltar", :back, :class => 'btn btn-default' %>
+    <%= f.button :submit, :class => 'btn-success' %>
   </div>
+
 <% end %>
+
+</div>
