@@ -1,5 +1,4 @@
-<div class="banner">
-  <%= image_tag @store.banner, class: 'banner-img' %>
+<div class="banner" style="background: url('<%= @store.banner %>);background-size:cover;">
 </div>
 
 <section class="page container">
@@ -10,7 +9,7 @@
     </div>
     <div class="col-md-7" style="height:100%;">
       <div class=" page-search input-group col-md-10 col-md-offset-2">
-        <input type="text" class="form-control" placeholder="Search for...">
+        <input type="text" class="form-control" placeholder="Buscar por...">
         <span class="input-group-btn">
           <button class="btn btn-default" type="button"><%= icon('search') %></button>
         </span>
