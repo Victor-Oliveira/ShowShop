@@ -6,6 +6,9 @@ class Store < ActiveRecord::Base
                     :styles => { :medium => "300x300>", :thumb => "100x100>" },
                     :default_url => "/images/:style/missing.png"
 
+  has_attached_file :logo,
+                    :default_url => "/images/:style/missing.png"                  
+  
   # has_attached_file :banner,
   #                   :storage => :dropbox,
   #                   :dropbox_credentials => "#{Rails.root}/config/dropbox_config.yml",
@@ -15,4 +18,5 @@ class Store < ActiveRecord::Base
   #                                         :unique_filename => true }
 
   validates_attachment_content_type :banner, :content_type => /\Aimage\/.*\Z/
+  validates_attachment_content_type :logo, :content_type => /\Aimage\/.*\Z/
 end
