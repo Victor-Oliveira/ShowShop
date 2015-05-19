@@ -5,7 +5,6 @@ class CreateStores < ActiveRecord::Migration
       t.string :name
       t.string :cnpj
       t.text :description
-      t.string :banner
       t.string :location
 
       t.timestamps null: false
