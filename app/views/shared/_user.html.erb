@@ -1,0 +1,7 @@
+<div id="user">
+  
+  <%= user_signed_in? ? render('shared/user_profile') : render('shared/user_login') %>
+
+</div>
+
+<%= button_tag image_tag('cadastrinho.jpg'), class:'btn btn-user', type: 'button' %>

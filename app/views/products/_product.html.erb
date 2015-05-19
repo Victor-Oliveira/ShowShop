@@ -4,12 +4,12 @@
     <%= link_to image_tag("http://placehold.it/15x15", class: 'card-img'), product_path(product) %>
     
     <div class="card-my-list">
-      <button class="btn btn-transparent col-md-12">Add Lista</button>
+      <button class="btn btn-transparent col-md-12"><%= icon('star-o') %> MINHA LISTA</button>
     </div>  
     
     <div class="card-details">
-      <div class="old-price col-md-5">antigo</div>
-      <div class="new-price col-md-7">novo</div>
+      <div class="price col-md-6 pull-right">
+      <span class="col-md-12">POR APENAS</span>R$ <%= product.price %></div>
     </div>
 
   </div>

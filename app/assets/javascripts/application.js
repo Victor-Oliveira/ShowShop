@@ -18,6 +18,10 @@
 
 var ready = function(){
   
+  $('.btn-user').click(function () {
+    $('#user').toggle();        
+  });
+
 }
 
 $(document).ready(ready);
