@@ -106,7 +106,7 @@ body {
 
 .page{
   min-height: 250px;
-  background: #fafafa;
+  background: #fff;
   margin-top:50px;
   margin-bottom: 5em;
 }
@@ -116,6 +116,9 @@ body {
   border:0;
 }
 
+.logo{
+  height: 5em;
+}
 .page-nav{
   background: $main_blue;
   li{
