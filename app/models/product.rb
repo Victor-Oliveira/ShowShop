@@ -1,6 +1,8 @@
 # -*- encoding : utf-8 -*-
 class Product < ActiveRecord::Base
   belongs_to :store
+  has_many :carts, through: :cart_products
+  has_many :cart_products
   
   has_attached_file :picture,
                     :styles => { :medium => "300x300>", :thumb => "100x100>" },
