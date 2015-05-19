@@ -11,6 +11,7 @@
       <strong>Código:</strong><%= @product.code %> <br> <br>
       <strong>Preço:</strong> R$ <%= @product.price %> <br> <br>
       <strong>Descrição:</strong><%= @product.description %> <br><br>
+      <%= link_to "Adicionar ao Carrinho", cart_path(current_user.cart.id, product: @product.id), :class => "btn btn-success"  %><br />
     </p>
   </div>
 </div>

@@ -11,6 +11,12 @@ class CartsController < ApplicationController
   # GET /carts/1
   # GET /carts/1.json
   def show
+    puts params.inspect
+    if(params[:product])
+      @cart = Cart.find(params[:id])
+      @cart.products << Product.find(params[:product])
+      @cart.save
+    end
   end
 
   # GET /carts/new
