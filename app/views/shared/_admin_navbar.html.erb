@@ -2,8 +2,8 @@
   <ul class="nav page-nav col-md-12">
     <!-- loop categorias -->
     <li><%= link_to "CONFIGURAR LOJA", edit_store_path(@store) %></li>
-    <li><%= link_to "NOVO PRODUTO", new_product_path %></li>
-    <li><%= link_to "LISTAR PRODUTOS", products_path %></li>
+    <li><%= link_to "NOVO PRODUTO", new_store_product_path(@store) %></li>
+    <li><%= link_to "LISTAR PRODUTOS", store_products_path(@store) %></li>
   
   </ul>
 </nav>

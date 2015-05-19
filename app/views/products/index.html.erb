@@ -16,14 +16,14 @@
     <tbody>
       <% @products.each do |product| %>
         <tr>
-          <td><%= link_to product.id, product_path(product) %></td>
+          <td><%= link_to product.id, store_product_path(@store, product) %></td>
           <td><%= product.name %></td>
           <td><%= product.code %></td>
           <td><%= product.price %></td>
           <td><%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_product_path(product), :class => 'btn btn-mini' %>
+                      edit_store_product_path(@store, product), :class => 'btn btn-mini' %>
               <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      product_path(product),
+                      store_product_path(@store, product),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-mini btn-danger' %></td>

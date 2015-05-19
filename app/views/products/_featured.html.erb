@@ -1,7 +1,8 @@
+<% products.each do |product| %>
 <div class="col-md-3">
   <div class="product-card col-md-12">
     
-    <%= link_to image_tag("http://placehold.it/15x15", class: 'card-img'), product_path(product) %>
+    <%= link_to image_tag("http://placehold.it/15x15", class: 'card-img'), store_product_path(store, product) %>
     
     <div class="card-my-list">
       <button class="btn btn-transparent col-md-12"><%= icon('star-o') %> MINHA LISTA</button>
@@ -14,3 +15,4 @@
 
   </div>
 </div>
+<% end %>

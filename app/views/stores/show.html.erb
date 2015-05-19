@@ -22,7 +22,7 @@
   
   <div class="col-md-12">
     <h2 class="col-md-12">PROMOÇÕES</h2>
-    <%= render @products.last(4) %>
+    <%= render partial: "products/featured", locals:{store: @store, products: @products.last(4)} %>
   </div>
     
 
