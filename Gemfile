@@ -26,6 +26,7 @@ gem 'cancancan', '~> 1.10'
 gem 'magic_encoding'
 
 gem "paperclip", "~> 4.2"
+gem "paperclip-dropbox", ">= 1.1.7"
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
