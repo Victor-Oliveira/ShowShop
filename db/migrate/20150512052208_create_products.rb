@@ -6,6 +6,8 @@ class CreateProducts < ActiveRecord::Migration
       t.string :code
       t.text :description
       t.decimal :price
+      t.belongs_to :store, index: true
+      t.belongs_to :cart, index: true
 
       t.timestamps null: false
     end
