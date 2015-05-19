@@ -1,5 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Product < ActiveRecord::Base
+  belongs_to :store
+  
   has_attached_file :picture,
                     :storage => :dropbox,
                     :dropbox_credentials => "#{Rails.root}/config/dropbox_config.yml",
