@@ -22,10 +22,6 @@ $ligther_blue: #00C1C1;
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
-@import url(http://fonts.googleapis.com/css?family=Dosis:400,700|Roboto:400,500,700|Fjalla+One);
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700,600,800,300);
-@import url(http://fonts.googleapis.com/css?family=Francois+One);
-
 .btn {
   border-radius: 0;
   padding:6px 40px;
@@ -96,10 +92,10 @@ body {
   vertical-align: middle;
 }
 .brand{
-  font-family: Open Sans;
+  font-family: Roboto;
   font-size: 6em;
   text-transform: none;
-  font-weight: bolder;
+  font-weight: bold;
   color: #f4f4f4;
   text-shadow:1px 1px 2px $main_blue;
 }
