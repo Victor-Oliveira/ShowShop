@@ -2,10 +2,77 @@
   <h3>Conheça o ShowShop</h3>
   Vantagens<br><br>
   <ul class="nav">
-    <% if user_signed_in? %>
-      <li><%= link_to "Sair", destroy_user_session_path, method: :delete %></li>
-    <% else %>
-      <li><%= link_to "Entrar", new_user_session_path %></li>
-    <% end %>
+    
+      <li><%= link_to "Cadastre-se","#signupModal",  data: {toggle:'modal', target:'#signupModal'} %></li>
+      <li><%= link_to "Entrar", "#signinModal",  data: {toggle:'modal', target:'#signinModal'} %></li>
+    
   </ul>
+</div>
+
+<div id="modal-holder">
+  <div class="modal" id="signinModal" tabindex="-1" aria-labelledby="mainModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Fechar</span></button>
+          <h4 class="modal-title" id="mainModalLabel">
+            Entrar
+          </h4>
+        </div>
+          <div class="row">
+          <div class="col-md-6 col-md-offset-3 modal-body">
+            <%= simple_form_for(:user, :url => session_path(:user)) do |f| %>
+              <div class="form-inputs">
+              <%= f.input :email, required: true, autofocus: true %>
+                <%= f.input :password, label:"Senha", required: true %>
+              <%= f.check_box :remember_me %>
+              <%= f.label :remember_me %>
+              </div>
+              <div class="form-actions">
+              <%= link_to "Esqueci minha senha", new_password_path(:user) %><br>
+              <%= link_to  "Voltar", "#" , data: {dismiss:'modal'}, class:'btn btn-default' %>
+              <%= f.submit 'Entrar', class: 'btn btn-success' %>
+              </div>
+
+            <% end %>
+          </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="mainModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button"  class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Fechar</span></button>
+          <h4 class="modal-title" id="mainModalLabel">
+            Cadastre-se
+          </h4>
+        </div>
+          <div class="row">
+          <div class="col-md-6 col-md-offset-3 modal-body">
+                                                                                
+          <%= simple_form_for(:user, url: registration_path(:user)) do |f| %>
+            <%= f.error_notification %>
+
+          <div class="form-inputs">
+            <%= f.input :email, required: true, autofocus: true %>
+            <%= f.input :password, label:"Senha", required: true, hint: (" Use pelo menos #{@minimum_password_length} caracteres" if @validatable) %>
+            <%= f.input :password_confirmation, label:"Confirme sua senha",required: true %>
+          </div>
+
+          <div class="form-actions">
+            <%= link_to  "Voltar", "#" , data: {dismiss:'modal'}, class:'btn btn-default' %>
+            <%= f.button :submit, "Enviar", class: 'btn btn-success' %>
+          </div>
+          <% end %>
+        </div>
+        </div>
+        
+
+
+      </div>
+    </div>
+  </div>
 </div>

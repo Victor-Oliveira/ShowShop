@@ -22,6 +22,8 @@ var ready = function(){
     $('#user').toggle();        
   });
 
+  $('#modal-holder').appendTo('body')
+
 }
 
 $(document).ready(ready);
