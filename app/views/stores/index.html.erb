@@ -10,7 +10,6 @@
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:cnpj) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
-      <th><%= model_class.human_attribute_name(:banner) %></th>
       <th><%= model_class.human_attribute_name(:location) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -22,7 +21,6 @@
         <td><%= store.name %></td>
         <td><%= store.cnpj %></td>
         <td><%= store.description %></td>
-        <td><%= store.banner %></td>
         <td><%= store.location %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
