@@ -25,7 +25,22 @@ $ligther_blue: #00C1C1;
 .btn {
   border-radius: 0;
   padding:6px 40px;
+  font-family: Roboto;
 }
+.btn-new{
+  @extend .btn-primary;
+  padding:6px 25px;
+}
+.btn-edit{
+  @extend .btn-warning;
+  padding: 6px 15px;
+}
+
+.btn-delete{
+  @extend .btn-danger;
+  padding: 6px 15px;
+}
+
 .btn-user{
   z-index: 100;
   padding:0;
@@ -178,6 +193,9 @@ body {
   }
 }
 
+.home-logos{
+  max-height:150px;
+}
 
 h1,h2,h3,h4,h5,h6,
 .h1,.h2,.h3,.h4,.h5,.h6{

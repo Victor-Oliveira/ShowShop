@@ -1,17 +1,22 @@
 <div class="page container">
-  <%- model_class = Store -%>
 <div class="page-header">
-  <h1>Lojas</h1>
+  <h1>Lojas
+  <div class="pull-right">
+  <%= link_to "Criar Nova Loja",
+            new_store_path,
+            :class => 'btn btn-new btn-primary' %>
+  </div>
+  </h1>
 </div>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:name) %></th>
-      <th><%= model_class.human_attribute_name(:cnpj) %></th>
-      <th><%= model_class.human_attribute_name(:description) %></th>
-      <th><%= model_class.human_attribute_name(:location) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      <th>Id</th>
+      <th>Nome</th>
+      <th>CNPJ</th>
+      <th>Descrição</th>
+      <th>Localização</th>
+      <th><div class="pull-right">Opções</div></th>
     </tr>
   </thead>
   <tbody>
@@ -23,20 +28,19 @@
         <td><%= store.description %></td>
         <td><%= store.location %></td>
         <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_store_path(store), :class => 'btn btn-mini' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+          <div class="pull-right">
+          <%= link_to icon('edit')+" Editar",
+                      edit_store_path(store), :class => 'btn btn-sm btn-edit' %>
+          <%= link_to icon('trash-o')+" Excluir",
                       store_path(store),
                       :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-mini btn-danger' %>
+                      :data => { :default => 'Você deseja excluir a loja?' },
+                      :class => 'btn btn-sm btn-delete' %>
+          </div>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_store_path,
-            :class => 'btn btn-primary' %>
 </div>
