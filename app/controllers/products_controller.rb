@@ -56,7 +56,7 @@ class ProductsController < ApplicationController
     end
 
     def set_product
-      @store = Store.find(params[:store_id])
+      @store = Store.find(params[:store_id]) unless params[:store_id].nil?
       @product = Product.find(params[:id])
     end
 

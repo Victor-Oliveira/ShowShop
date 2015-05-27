@@ -29,6 +29,9 @@
         <td><%= store.location %></td>
         <td>
           <div class="pull-right">
+          <%= link_to icon('edit')+" Editar Produtos",
+                      store_products_path(store), :class => 'btn btn-sm btn-primary' %>
+          
           <%= link_to icon('edit')+" Editar",
                       edit_store_path(store), :class => 'btn btn-sm btn-edit' %>
           <%= link_to icon('trash-o')+" Excluir",
