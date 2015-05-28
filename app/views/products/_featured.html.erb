@@ -1,0 +1,18 @@
+<% products.each do |product| %>
+<div class="col-md-3">
+  <div class="product-card col-md-12">
+    
+    <%= link_to image_tag( product.picture, class: 'card-img'), store_product_path(store, product), data: { modal: true }, :product_details => true %>
+      
+    <div class="card-my-list">
+      <button class="btn btn-transparent col-md-12"><%= icon('star-o') %> MINHA LISTA</button>
+    </div>  
+    
+    <div class="card-details">
+      <div class="price col-md-6 pull-right">
+      <span class="col-md-12">POR APENAS</span>R$ <%= product.price %></div>
+    </div>
+
+  </div>
+</div>
+<% end %>

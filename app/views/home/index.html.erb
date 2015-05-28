@@ -22,7 +22,9 @@
     <div class="container">
         <h2 class="col-md-offset-1">AQUI VOCÊ ENCONTRA</h2>
         <div class="col-md-10 col-md-offset-1">
-            logos de lojas
+            <% @lojas.each do |loja| %>
+                <%= link_to (image_tag loja.logo, class: 'home-logos'), store_path(loja) %>
+            <% end %>
         </div>
     </div>
 </div>

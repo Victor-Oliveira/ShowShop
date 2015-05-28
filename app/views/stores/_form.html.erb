@@ -22,14 +22,19 @@
     <div class="col-md-10">
       <%= f.input :banner, label:false, wrapper:false %><br />
     </div>
-
+    
+    <label class="col-md-2 control-label">Logo </label>
+      <div class="col-md-10">
+        <%= f.input :logo, label:false, wrapper:false %><br />
+    </div>
+    
     <label class="col-md-2 control-label">Localização </label>
     <div class="col-md-10">
       <%= f.input :location, label:false, wrapper:false %><br />
     </div>
   <div class="form-actions col-md-10 col-md-offset-2">
-    <%= link_to "Voltar", :back, :class => 'btn btn-default' %>
-    <%= f.button :submit, :class => 'btn-success' %>
+    <%= link_to "Voltar", stores_path, :class => 'btn btn-default' %>
+    <%= f.button :submit,"Enviar" ,:class => 'btn-success' %>
   </div>
 
 <% end %>

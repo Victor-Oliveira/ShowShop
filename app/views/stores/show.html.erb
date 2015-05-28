@@ -1,17 +1,17 @@
-<div class="banner" style="background: url('<%= @store.banner %>);background-size:cover;">
+<div class="banner" style="background: url('<%= @store.banner %>');background-size:cover;">
 </div>
 
 <section class="page container">
   
   <header class="col-md-12 page-header store-header">
     <div class="col-md-5">
-      <%= @store.name %>
+      <%= image_tag @store.logo, class:'logo' %>
     </div>
     <div class="col-md-7" style="height:100%;">
       <div class=" page-search input-group col-md-10 col-md-offset-2">
         <input type="text" class="form-control" placeholder="Buscar por...">
         <span class="input-group-btn">
-          <button class="btn btn-default" type="button"><%= icon('search') %></button>
+          <button class="btn btn-search" type="button"><%= icon('search') %></button>
         </span>
       </div>
     </div>
@@ -22,7 +22,7 @@
   
   <div class="col-md-12">
     <h2 class="col-md-12">PROMOÇÕES</h2>
-    <%= render @products.last(4) %>
+    <%= render partial: "products/featured", locals:{store: @store, products: @store.products} %>
   </div>
     
 

@@ -1,5 +1,5 @@
 <div class="col-md-8 col-md-offset-2">
-<%= simple_form_for @product, :html => { :class => 'form-horizontal' } do |f| %>
+<%= simple_form_for [@store,@product], :html => { :class => 'form-horizontal' } do |f| %>
   <% if @product.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@product.errors.count, "error") %> prohibited this item from being saved:</h2>
@@ -11,7 +11,8 @@
       </ul>
     </div>
   <% end %>
-  
+
+  <%= f.input :store_id, as: :hidden, value:@store_id  %>
   <div class="form-group col-md-12">
     <label class="col-md-2 control-label">Nome </label>
     <div class="col-md-10">
@@ -27,6 +28,12 @@
     <div class="col-md-10">
       <%= f.input :price,  label:false , wrapper: false %><br>
     </div>
+
+    <label class="col-md-2 control-label">Imagem </label>
+    <div class="col-md-10">
+      <%= f.input :picture, label:false, wrapper:false %><br />
+    </div>
+
     
     <label class="col-md-2 control-label">Descrição </label>
     <div class="col-md-10">
@@ -34,7 +41,7 @@
     </div>
 
     <div class="col-sm-offset-2 col-sm-10">
-      <%= link_to "Voltar" , products_path, :class => 'btn btn-default' %>
+      <%= link_to "Voltar" , store_products_path(@store), :class => 'btn btn-default' %>
       <%= f.button :submit, "Enviar", :class => 'btn-success' %>
     </div>
   </div>

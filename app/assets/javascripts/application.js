@@ -18,6 +18,12 @@
 
 var ready = function(){
   
+  $('.btn-user').click(function () {
+    $('#user').toggle();        
+  });
+
+  $('#modal-holder').appendTo('body')
+
 }
 
 $(document).ready(ready);
