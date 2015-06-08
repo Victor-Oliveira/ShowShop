@@ -2,6 +2,7 @@
 class User < ActiveRecord::Base
   has_one :cart
   after_create :create_cart
+  belongs_to :role
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

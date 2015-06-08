@@ -28,3 +28,7 @@ Product.create(name:"Produto 03", code:"0403", description:"descrição", price:
 Product.create(name:"Produto 04", code:"0404", description:"descrição", price: BigDecimal.new(200), store_id: 4)
 Product.create(name:"Produto 01", code:"0501", description:"descrição", price: BigDecimal.new(30), store_id: 5)
 Product.create(name:"Produto 02", code:"0502", description:"descrição", price: BigDecimal.new(70), store_id: 5)
+
+['store', 'client', 'admin'].each do |role|
+  Role.find_or_create_by({name: role})
+end
