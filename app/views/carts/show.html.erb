@@ -9,12 +9,8 @@
     
     <%= link_to image_tag( product.picture, class: 'card-img'), store_product_path(product.store, product), data: { modal: true }, :product_details => true %>
       
-    <div class="card-my-list">
-      <button class="btn btn-transparent btn-home col-md-12"><%= icon('star-o') %> MINHA LISTA</button>
-    </div>  
-    
     <div class="card-details col-md-12">
-      <a href="#" class="btn btn-danger btn-remove pull-right"><%= icon('trash-o') %></a>
+      <%= link_to icon('trash-o'), cart_remove_path(@cart,product), class:"btn btn-danger btn-remove pull-right" %>
       <strong><%= product.name %></strong><br>
       R$ <%= product.price %>
     </div>

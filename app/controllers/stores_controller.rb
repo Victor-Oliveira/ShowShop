@@ -13,6 +13,7 @@ class StoresController < ApplicationController
   # GET /stores/1.json
   def show
     @products = @store.products
+    @categories = ["f ","a "] 
   end
 
   # GET /stores/new

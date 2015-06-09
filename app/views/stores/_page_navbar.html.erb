@@ -1,8 +1,7 @@
 <nav class="row">
-  <ul class="nav page-nav col-md-12">
-    <!-- loop categorias -->
-    <li><a href="#">Eletrônicos</a></li>
-    <li><a href="#">Roupas</a></li>
-    <li><a href="#">Telefonia</a></li>
+  <ul class="nav page-nav col-md-12" style="<%= @store.primary_color %>">
+      <%  @categories.each do |c| %>
+        <li><%= link_to c,"#", onMouseOver:"this.style.backgroundColor='##{@store.secondary_color}'", onMouseOut:"this.style.backgroundColor='##{@store.primary_color}'" %></li>
+      <% end %>
   </ul>
 </nav>

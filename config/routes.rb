@@ -8,8 +8,11 @@ Rails.application.routes.draw do
   resources :stores do
     resources :products
   end
-  resources :carts
-  
+  resources :carts do
+    get "/add/:product", to: "carts#add_product", as: "add"
+    get "/remove/:product", to: "carts#remove_product", as: "remove"
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,7 +1,6 @@
 <div id="user-profile">
   <header>
     <%= image_tag 'http://placehold.it/32x32', class:'img-circle' %>
-    Fulano
     <%= link_to "Sair", destroy_user_session_path, method: :delete , class: 'pull-right' %>
   </header>
   <section>
@@ -9,6 +8,7 @@
     <br><br>
     <br><br>
     <%= link_to "Meu Carrinho", cart_path(@cart), class:'col-md-6 btn btn-transparent btn-home' %>
+    <%= link_to "Minha Cesta", cart_path(@cart), class:'col-md-6 btn btn-transparent btn-home' %>
   </section>
   <!-- info do usuario -->
 </div>
