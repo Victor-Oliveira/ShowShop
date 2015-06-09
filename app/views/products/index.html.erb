@@ -13,7 +13,7 @@
         <th>Nome</th>
         <th>Código</th>
         <th>Preço</th>
-        <th>Opções</th>
+        <th><div class="pull-right">Opções</div></th>
       </tr>
     </thead>
     <tbody>
@@ -24,14 +24,18 @@
           <td><%= product.name %></td>
           <td><%= product.code %></td>
           <td><%= product.price %></td>
-          <td><%= link_to icon('external-link')+" Ver no site", store_product_path(@store,product), class:"btn btn-sm btn-primary btn-edit-page" %>
+          <td>
+            <div class="pull-right">
+            
+            <%= link_to icon('external-link')+" Ver no site", store_path(@store), class:"btn btn-sm btn-primary btn-edit-page" %>
               <%= link_to icon('edit')+" Editar",
                       edit_store_product_path(@store, product), :class => 'btn btn-edit' %>
               <%= link_to icon('trash-o')+" Excluir",
                       store_product_path(@store, product),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-delete' %></td>
+                      :class => 'btn btn-delete' %>
+            </div></td>
         </tr>
       <% end %>
     </tbody>

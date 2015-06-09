@@ -18,8 +18,11 @@ class ProductsController < ApplicationController
   
   def create
     @product = Product.new(product_params)
-    @product.save
-    redirect_to store_products_path(params[:store_id])
+    respond_to do |format|
+      if @product.save
+      format.html { redirect_to store_products_path(store_id: params[:store_id]) }
+      end
+    end
   end
 
   def update
@@ -31,7 +34,7 @@ class ProductsController < ApplicationController
   def destroy
     @product.destroy
     respond_to do |format|
-      format.html { redirect_to store_product_url(params[:store_id],@product), notice: 'Produto excluído com sucesso.' }
+      format.html { redirect_to store_products_url(params[:store_id]), notice: 'Produto excluído com sucesso.' }
       format.json { render :show, status: :created, location: @product }
     end
   end
