@@ -4,6 +4,7 @@ class CreateProducts < ActiveRecord::Migration
     create_table :products do |t|
       t.string :name
       t.string :code
+      t.string :model
       t.text :description
       t.decimal :price
       t.belongs_to :store, index: true
