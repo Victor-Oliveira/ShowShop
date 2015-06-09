@@ -28,7 +28,7 @@ function openOnModal(product,store){
                             <strong>Código:</strong>'+data.code+' <br> <br> \
                             <strong>Preço:</strong> R$ '+data.price+' <br> <br> \
                             <strong>Descrição:</strong> '+data.description+' <br><br> \
-                            <a href="/cart/add/'+data.cart+'" class="btn btn-success">Adicionar ao Carrinho</a> \
+                            <a href="/carts/'+data.cart+'/add/'+data.id+'" class="btn btn-success">Adicionar ao Carrinho</a> \
                           </p> \
                         </div> \
                       </div> \
