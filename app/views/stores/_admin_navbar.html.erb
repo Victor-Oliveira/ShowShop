@@ -1,0 +1,27 @@
+<% if @store.nil? or @store.name.nil? %>
+
+<nav class="row">
+  <div class="col-md-12 h1"><%= link_to "Painel Administrativo", stores_path %> </div>
+  <ul class="nav page-nav col-md-12">
+    <!-- loop categorias -->
+    <li><%= link_to "NOVA LOJA", new_store_path %></li>
+    <li><%= link_to "LISTAR LOJAS", stores_path %></li>
+  
+  </ul>
+</nav>
+
+
+<% else %>
+<nav class="row">
+  <div class="col-md-12 h1"><%= link_to "Painel Administrativo", stores_path %> > <strong><%= @store.name %></strong></div>
+  <ul class="nav page-nav col-md-12">
+    <!-- loop categorias -->
+    <li><%= link_to "EDITAR LOJA", edit_store_path(@store) %></li>
+    <li><%= link_to "NOVO PRODUTO",new_store_product_path(@store) %></li>
+    <li><%= link_to "LISTAR PRODUTOS", store_products_path(@store) %></li>
+  
+  </ul>
+</nav>
+
+
+<% end %>

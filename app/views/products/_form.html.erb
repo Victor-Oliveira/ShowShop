@@ -12,7 +12,7 @@
     </div>
   <% end %>
 
-  <%= f.input :store_id, as: :hidden, value:@store_id  %>
+  <%= f.hidden_field :store_id, value: @store.id  %>
   <div class="form-group col-md-12">
     <label class="col-md-2 control-label">Nome </label>
     <div class="col-md-10">

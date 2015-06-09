@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 class CartsController < ApplicationController
-  before_action :set_cart, only: [:show, :edit, :update, :destroy]
+  before_action :set_cart, only: [:show, :add_product, :remove_product,:edit, :update, :destroy]
 
   # GET /carts
   # GET /carts.json
@@ -11,12 +11,19 @@ class CartsController < ApplicationController
   # GET /carts/1
   # GET /carts/1.json
   def show
-    puts params.inspect
-    if(params[:product])
-      @cart = Cart.find(params[:id])
-      @cart.products << Product.find(params[:product])
-      @cart.save
-    end
+  end
+
+  def add_product
+    @product = Product.find(params[:product])
+    @cart.products << @product
+    @cart.save
+    redirect_to cart_path(@cart)
+  end
+
+  def remove_product
+    @cart.products.delete(Product.find(params[:product]))
+    @cart.save
+    redirect_to cart_path(@cart)
   end
 
   # GET /carts/new
@@ -71,7 +78,7 @@ class CartsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_cart
-      @cart = Cart.find(params[:id])
+      @cart = Cart.find(params[:id]) if @cart.nil?
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

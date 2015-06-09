@@ -5,8 +5,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action {
-    @cart = Cart.find_or_create_by(id: session[:cart_id])
-    session[:cart_id] = @cart.id
+    unless current_user.nil?
+      current_user.cart = Cart.find_or_create_by(user_id: current_user.id)
+      @cart = current_user.cart
+    end
   }
 
 end
