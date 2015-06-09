@@ -1,8 +1,11 @@
 <div class="page container">
-  <%- model_class = Product -%>
+  
+  <%= render "stores/admin_navbar" %>
+  
   <div class="page-header">
-    <h1>PRODUTOS</h1>
+    <h2>PRODUTOS</h2>
   </div>
+
   <table class="table table-striped">
     <thead>
       <tr>
@@ -17,11 +20,12 @@
       <% @products.each do |product| %>
         <a href="<%= store_product_path(@store, product) %>"></a>
         <tr>
-          <td><%= link_to product.id %></td>
-          <td><%= link_to product.name %></td>
+          <td><%= product.id %></td>
+          <td><%= product.name %></td>
           <td><%= product.code %></td>
           <td><%= product.price %></td>
-          <td><%= link_to icon('edit')+" Editar",
+          <td><%= link_to icon('external-link')+" Ver no site", store_product_path(@store,product), class:"btn btn-sm btn-primary btn-edit-page" %>
+              <%= link_to icon('edit')+" Editar",
                       edit_store_product_path(@store, product), :class => 'btn btn-edit' %>
               <%= link_to icon('trash-o')+" Excluir",
                       store_product_path(@store, product),
