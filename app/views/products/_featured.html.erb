@@ -2,7 +2,7 @@
 <div class="col-md-3">
   <div class="product-card col-md-12">
     
-    <%= link_to image_tag( product.picture, class: 'card-img'), store_product_path(store, product), data: { modal: true }, :product_details => true %>
+    <%= button_tag image_tag( product.picture, class: 'card-img'), onclick:"openOnModal(#{product.id},#{@store.id});", type:"button" %>
       
     <div class="card-my-list">
       <button class="btn btn-transparent col-md-12"><%= icon('star-o') %> MINHA LISTA</button>

@@ -7,7 +7,7 @@
     <div class="col-md-3">
   <div class="product-card col-md-12">
     
-    <%= link_to image_tag( product.picture, class: 'card-img'), store_product_path(product.store, product), data: { modal: true }, :product_details => true %>
+    <%= link_to image_tag( product.picture, class: 'card-img'), "#", onclick: 'openOnModal(#{product.id});', :product_details => true %>
       
     <div class="card-details col-md-12">
       <%= link_to icon('trash-o'), cart_remove_path(@cart,product), class:"btn btn-danger btn-remove pull-right" %>
