@@ -11,4 +11,12 @@ class User < ActiveRecord::Base
   def create_cart
   	Cart.create(user_id: self.id)
   end
+
+  def admin?
+    self.role.id == 3 ? true : false
+  end
+
+  def store_owner?
+    self.role.id == 1 ? true : false
+  end
 end

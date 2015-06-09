@@ -2,48 +2,71 @@
 <div class="page-header">
   <h1>Lojas
   <div class="pull-right">
-  <%= link_to "Criar Nova Loja",
-            new_store_path,
-            :class => 'btn btn-new btn-primary' %>
+  <% if can? :manage, :all %>
+    <%= link_to "Criar Nova Loja",
+              new_store_path,
+              :class => 'btn btn-new btn-primary' %>
+  <% end %>
   </div>
   </h1>
 </div>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Id</th>
-      <th>Nome</th>
-      <th>CNPJ</th>
-      <th>Descrição</th>
-      <th>Localização</th>
-      <th><div class="pull-right">Opções</div></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @stores.each do |store| %>
+<% if can? :manage, :stores %>
+  <table class="table table-striped">
+    <thead>
       <tr>
-        <td><%= link_to store.id, store_path(store) %></td>
-        <td><%= store.name %></td>
-        <td><%= store.cnpj %></td>
-        <td><%= store.description %></td>
-        <td><%= store.location %></td>
-        <td>
-          <div class="pull-right">
-          <%= link_to icon('edit')+" Editar Produtos",
-                      store_products_path(store), :class => 'btn btn-sm btn-primary' %>
-          
-          <%= link_to icon('edit')+" Editar",
-                      edit_store_path(store), :class => 'btn btn-sm btn-edit' %>
-          <%= link_to icon('trash-o')+" Excluir",
-                      store_path(store),
-                      :method => :delete,
-                      :data => { :default => 'Você deseja excluir a loja?' },
-                      :class => 'btn btn-sm btn-delete' %>
-          </div>
-        </td>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>CNPJ</th>
+        <th>Descrição</th>
+        <th>Localização</th>
+        <th><div class="pull-right">Opções</div></th>
       </tr>
-    <% end %>
+    </thead>
+    <tbody>
+        <% @stores.each do |store| %>
+          <tr>
+            <td><%= link_to store.id, store_path(store) %></td>
+            <td><%= store.name %></td>
+            <td><%= store.cnpj %></td>
+            <td><%= store.description %></td>
+            <td><%= store.location %></td>
+            <td>
+              <div class="pull-right">
+              <%= link_to icon('edit')+" Editar Produtos",
+                          store_products_path(store), :class => 'btn btn-sm btn-primary' %>
+              
+              <%= link_to icon('edit')+" Editar",
+                          edit_store_path(store), :class => 'btn btn-sm btn-edit' %>
+              <% if can? :manage, :all %>
+                <%= link_to icon('trash-o')+" Excluir",
+                            store_path(store),
+                            :method => :delete,
+                            :data => { :default => 'Você deseja excluir a loja?' },
+                            :class => 'btn btn-sm btn-delete' %>
+              <% end %>
+              </div>
+            </td>
+          </tr>
+        <% end %>
   </tbody>
 </table>
+<% else %>
+<% @stores.each do |store| %>
+  <div class="col-md-3">
+    <div class="product-card col-md-12">
+      
+      <%= link_to image_tag( store.logo, class: 'card-img'), store_path(store), data: { modal: true }, :store_details => true %>
+        
+      <div class="card-my-list">
+        <button class="btn btn-transparent col-md-12">
+          <%= store.name %>
+        </button>
+      </div>  
+
+
+    </div>
+  </div>
+  <% end %>
+<% end %>
 
 </div>

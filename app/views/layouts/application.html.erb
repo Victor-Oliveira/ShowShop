@@ -25,7 +25,11 @@
           <% if current_user.nil? %>
           
           <% else %>
-            <li><%= link_to "Minhas Lojas", stores_path %></li>
+            <% if can? :manage, :stores %>
+              <li><%= link_to "Minhas Lojas", stores_path %></li>
+            <% else %>
+              <li><%= link_to "Lojas", stores_path %></li>
+            <% end %>
           <% end %>
         </ul>
       </div>

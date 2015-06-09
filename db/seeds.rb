@@ -7,7 +7,6 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.create(email:"admin@example.com", password:"rootadmin")
 
 Store.create(name:"Loja 01", cnpj:"1111111111", description:"descrição", location: "Endereço")
 Store.create(name:"Loja 02", cnpj:"2222222222", description:"descrição", location: "Endereço")
@@ -29,6 +28,10 @@ Product.create(name:"Produto 04", code:"0404", description:"descrição", price:
 Product.create(name:"Produto 01", code:"0501", description:"descrição", price: BigDecimal.new(30), store_id: 5)
 Product.create(name:"Produto 02", code:"0502", description:"descrição", price: BigDecimal.new(70), store_id: 5)
 
-['store', 'client', 'admin'].each do |role|
+['store_owner', 'client', 'admin'].each do |role|
   Role.find_or_create_by({name: role})
 end
+
+User.create(email:"admin@example.com", password:"rootadmin", role_id: 3)
+User.create(email:"store_owner@example.com", password:"rootadmin", role_id: 1)
+User.create(email:"client@example.com", password:"rootadmin", role_id: 2)

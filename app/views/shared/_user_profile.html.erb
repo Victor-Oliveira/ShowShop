@@ -1,7 +1,7 @@
 <div id="user-profile">
   <header>
     <%= image_tag 'http://placehold.it/32x32', class:'img-circle' %>
-    Fulano
+    <%= user.email %>
     <%= link_to "Sair", destroy_user_session_path, method: :delete , class: 'pull-right' %>
   </header>
   <section>

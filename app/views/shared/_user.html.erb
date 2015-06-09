@@ -1,6 +1,6 @@
 <div id="user">
   
-  <%= user_signed_in? ? render('shared/user_profile') : render('shared/user_login') %>
+  <%= user_signed_in? ? render('shared/user_profile', :user => current_user) : render('shared/user_login') %>
 
 </div>
 
