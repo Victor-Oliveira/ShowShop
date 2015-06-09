@@ -1,0 +1,17 @@
+<div class="page container">
+  <div class="page-header">
+    <%= link_to "Voltar", store_path(@product.store) %>
+  </div>
+  <div class="col-md-5">
+    <%= image_tag @product.picture, class:'img' %>
+  </div>
+  <div class="col-md-7">
+    <h3><%= @product.name %></h3>
+    <p>
+      <strong>Código:</strong><%= @product.code %> <br> <br>
+      <strong>Preço:</strong> R$ <%= @product.price %> <br> <br>
+      <strong>Descrição:</strong><%= @product.description %> <br><br>
+      <%= link_to "Adicionar ao Carrinho", cart_add_path(@cart,product: @product.id), :class => "btn btn-success"  %><br />
+    </p>
+  </div>
+</div>

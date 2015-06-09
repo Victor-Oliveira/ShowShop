@@ -24,9 +24,11 @@ $ligther_blue: #00C1C1;
 
 .btn {
   border-radius: 0;
+  color: #fff;
   padding:6px 40px;
   font-family: Roboto;
 }
+
 .btn-new{
   @extend .btn-primary;
   padding:6px 25px;
@@ -126,7 +128,9 @@ body {
   padding: 6px 20px;
   font-size: 16px;
 }
-
+.btn-default{
+  color:#000;
+}
 .store-header{
   border:0;
 }
@@ -171,7 +175,6 @@ body {
   width: 100%;
   height: 15em;
   margin: 0;
-  margin-bottom:-34px;
 } 
   .price{
     text-align: left;
@@ -189,7 +192,7 @@ body {
 
 
 .btn-transparent{
-  background: rgba(0, 166, 166,0.8);
+  background: rgba(0, 166, 166,0.9);
   color: #fff;
   font-weight:bold;
   &:hover{
@@ -205,7 +208,11 @@ h1,h2,h3,h4,h5,h6,
 .h1,.h2,.h3,.h4,.h5,.h6{
   font-family:Dosis;
   text-transform: uppercase;
-  color:#00A6A6;
+  color:$main_blue;
+  a:hover,a:focus,a:active, a:visited{
+    color:$main_blue;
+    text-decoration: none;
+  }
 }
 .btn-home{
   padding:6px;
@@ -223,6 +230,9 @@ h1,h2,h3,h4,h5,h6,
   display: none;
   z-index: 100;
 }
+.btn-edit-page{
+  padding: 6px 15px;
+}
 .user-login{
   h3{
     margin-top:5px;
@@ -235,9 +245,15 @@ h1,h2,h3,h4,h5,h6,
 .img{
   max-width: 100%;
 }
+.card-my-list{
+  margin-top:-33px;
+}
 
 .card-details {
   padding:10px;
   color: #fff;
+  z-index: 2px;
 }
+
+
 

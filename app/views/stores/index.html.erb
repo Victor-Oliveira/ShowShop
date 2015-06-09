@@ -1,6 +1,9 @@
 <div class="page container">
+
+<%= render "admin_navbar" %>
+
 <div class="page-header">
-  <h1>Lojas
+  <h2>Lojas
   <div class="pull-right">
   <% if can? :manage, :all %>
     <%= link_to "Criar Nova Loja",
@@ -8,7 +11,7 @@
               :class => 'btn btn-new btn-primary' %>
   <% end %>
   </div>
-  </h1>
+  </h2>
 </div>
 <% if can? :manage, :stores %>
   <table class="table table-striped">

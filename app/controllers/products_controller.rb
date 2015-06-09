@@ -20,32 +20,21 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
     respond_to do |format|
       if @product.save
-        format.html { redirect_to store_product_url(params[:store_id],@product), notice: 'Produto criado com sucesso.' }
-        format.json { render :show, status: :created, location: @product }
-      else
-        format.html { render :new }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
+      format.html { redirect_to store_products_path(store_id: params[:store_id]) }
       end
     end
   end
 
   def update
-    respond_to do |format|
-      if @product.update(product_params)
-        format.html { redirect_to store_product_url(params[:store_id],@product), notice: 'Produto atualizado com sucesso.' }
-        format.json { render :show, status: :created, location: @product }
-      else
-        format.html { render :new }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
-      end
-    end
+    @product.update(product_params)
+    redirect_to store_products_path(params[:store_id])
   end
 
 
   def destroy
     @product.destroy
     respond_to do |format|
-      format.html { redirect_to store_product_url(params[:store_id],@product), notice: 'Produto excluído com sucesso.' }
+      format.html { redirect_to store_products_url(params[:store_id]), notice: 'Produto excluído com sucesso.' }
       format.json { render :show, status: :created, location: @product }
     end
   end
